@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animatie 1</title>
+	<script src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	
+	<style>
+
+		body
+		{
+			background-color: #245C73;
+		}
+
+		.bal
+		{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transition: -webkit-transform 0.5s cubic-bezier(.07,1,.96,.98);
+			
+		}
+
+		#yellow
+		{
+			background-color: yellow;
+		}
+
+		#green
+		{
+			background-color: green;
+		}
+
+		#red
+		{
+			background-color: red;
+		}
+
+		.startyellow
+		{
+			-webkit-transform: translateY(50px);
+		}
+
+		.startred
+		{
+			-webkit-transform: translateX(50px);
+		}
+
+		.startgreen
+		{
+			-webkit-transform: translateY(50px) translateX(50px);
+		}
+
+		.stopyellow
+		{
+			-webkit-transform: translateY(0px);
+		}
+
+		.stopred
+		{
+			-webkit-transform: translateX(0px);
+		}
+
+		.stopgreen
+		{
+			-webkit-transform: translateY(0px) translateX(0px);
+		}
+
+	</style>
+
+	<div class="bal" id="red"></div>
+	<div class="bal" id="green"></div>
+	<div class="bal" id="yellow"></div>
+
+	
+
+	<script>
+
+		$(document).ready(function(){
+			$('#yellow').click(function(){
+
+				$(this).removeClass("stopyellow");
+				$("#green").removeClass("stopgreen");
+				$("#red").removeClass("stopred");
+
+				$(this).addClass("startyellow");
+				$("#green").addClass("startgreen");
+				$("#red").addClass("startred");
+			});
+
+			$('#red').click(function(){
+
+				$(this).removeClass("startred");
+				$("#green").removeClass("startgreen");
+				$("#yellow").removeClass("startyellow");
+
+				$(this).addClass("stopred");
+				$("#green").addClass("stopgreen");
+				$("#yellow").addClass("stopyellow");
+			});
+
+		});
+
+	</script>
+
+</body>
+</html>
