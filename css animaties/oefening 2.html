@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animatie 2</title>
+</head>
+<body>
+
+	<style>
+
+		body
+		{
+			background-color: #245C73;
+			width: 300px;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: "Helvetica Neue";
+		}
+
+		.welcome
+		{
+			background-color: white;
+			width: 300px;
+			height: 75px;
+			border-radius: 25px;
+			-webkit-animation: moveIn 0.5s;
+			text-align: center;
+		}
+
+		.pictures
+		{
+			width: 300px;
+			margin-top: 50px;
+			-webkit-animation: pictureIn 0.8s;
+			-webkit-transform-origin: left;
+		}
+
+		.pictures img
+		{
+			width: 90px;
+			border-radius: 7%;
+			transition: -webkit-transform 0.3s;
+		}
+
+		.pictures img:hover
+		{
+			-webkit-transform: scale(1.2);
+		}
+
+		img.middle
+		{
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.welcome p
+		{
+			padding-top: 25px;
+			-webkit-animation: moveText 0.5s;
+		}
+
+
+		@-webkit-keyframes moveIn
+		{
+			0% 		{-webkit-transform: perspective(300px) rotateX(90deg)}
+
+			75%		{-webkit-transform: perspective(300px) rotateX(-30deg)}
+
+			87%		{-webkit-transform: perspective(300px) rotateX(10deg)}
+
+			100% 	{-webkit-transform: perspective(300px) rotateX(0deg)}
+		}
+
+		@-webkit-keyframes moveText
+		{
+			0%		{-webkit-transform: translateX(-50px)}
+
+			75%		{-webkit-transform: translateX(10px)}
+
+			100%	{}
+		}
+
+		@-webkit-keyframes pictureIn
+		{
+			0%		{-webkit-transform: perspective(300px) rotateY(90deg)}
+
+			60%		{-webkit-transform: perspective(300px) rotateY(-15deg)}
+
+			75%		{-webkit-transform: perspective(300px) rotateY(5deg)}
+			
+			100%	{-webkit-transform: perspective(300px) rotateY(0deg)}
+		}
+	
+	</style>
+
+	<div class="welcome">
+		
+		<p>Dit is een dummytekst!</p>
+
+	</div>
+
+	<div class="pictures">
+		
+		<img src="128.jpg" alt="">
+		<img class="middle" src="129.jpg" alt="">
+		<img src="130.jpg" alt="">
+
+	</div>
+	
+</body>
+</html>
