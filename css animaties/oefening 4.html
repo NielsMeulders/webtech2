@@ -8,6 +8,21 @@
 
 	<style>
 
+		img
+		{
+			width: 100px;
+		}
+
+		#man
+		{
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			left: 100px;
+			-webkit-animation: animatieMan 1.5s;
+		}
+
 		.screen
 		{
 			width: 300px;
@@ -16,20 +31,33 @@
 			margin-left: auto;
 			margin-right: auto;
 			background-color: #0376D5;
-			-webkit-animation: animatie 3s;
+			-webkit-animation: animatieAchtergrond 3s;
 		}
 
-		@-webkit-keyframes animatie
+		@-webkit-keyframes animatieAchtergrond
 		{
 			0%		{}
 			50%		{background-color: #0376D5;}
-			80%	{background-color: #F57126;}
+			80%		{background-color: #F57126;}
 			100%	{background-color: #F57126;}
+		}
+
+		@-webkit-keyframes animatieMan
+		{
+			0%		{top: 500px;}
+			50%		{top: 20px;}
+			60%		{top: 30px;}
+			80%		{top: -200px;}
+			100%	{top: -200px;}
 		}
 
 	</style>
 	
-	<div class="screen"></div>
+	<div class="screen">
+		
+		<img id="man" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/short_beard.png" alt="">
+
+	</div>
 
 </body>
 </html>
