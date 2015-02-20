@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add items to a list with animations</title>
+    <link rel="stylesheet" href="css/8b-add-item.css">
+</head>
+<body>
+    <ul class="todo" id="todo">
+        <li class="high appear">Item</li>
+        <li class="medium appear">Item</li>
+        <li class="low appear">Item</li>
+    </ul>
+    
+    <a href="#" id="button-add">Add a list item</a>
+    
+    <script>
+        var items = document.getElementsByTagName("li");
+        for(var i=0; i<items.length; i++)
+        {
+            items[i].addEventListener("click", function(){
+                this.setAttribute("class", "");
+            });
+        }
+        
+        var button = document.getElementById("button-add");
+        button.addEventListener("click", function(){
+            var ul = document.getElementById("todo");
+            var li = document.createElement("li");
+            li.innerHTML = "Item";
+            li.addEventListener("click", function(){
+                this.setAttribute("class", "");
+            });            
+            
+            ul.appendChild(li);
+            
+            setTimeout(function(){
+                li.setAttribute("class", "appear");
+            }, 5);
+        });
+    </script>
+    
+</body>
+</html>
