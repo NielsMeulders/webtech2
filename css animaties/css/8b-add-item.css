@@ -1,0 +1,71 @@
+body
+{
+    font-family: Helvetica;
+    padding: 1em;
+}
+
+li
+{
+    background-color: #33aafa;
+}
+
+.high
+{
+    background-color: #D43257;
+}
+
+.medium
+{
+    background-color: #ffe92a;
+}
+
+.low
+{
+    background-color: #a9e228;
+}
+
+ul.todo
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+ul#todo li
+{
+    padding: 0 0.5em;
+    margin: 0;
+    width: 500px;
+    font-weight: bold;
+    list-style-type: none;
+    overflow: hidden;
+    -webkit-transform: rotateX(90deg);
+    -webkit-transform-origin: top;
+    transition: -webkit-transform 0.5s;
+
+    /* this is where the magic happens */
+    height: 0;
+    
+    /* define what to transition and how fast to do it */
+}
+
+ul#todo li.appear
+{
+    /* this is where the magic happens */
+    height: 1em;
+    padding: 0.5em;
+    transform: none;
+    border: 1px solid white;
+    -webkit-transform: perspective(400px) rotateY(0deg);
+}
+
+#button-add
+{
+    color: #6e6e6e;
+    border: 1px solid #c3c3c3;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 2px;
+}
