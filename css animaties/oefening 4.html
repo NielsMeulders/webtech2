@@ -13,6 +13,32 @@
 			width: 100px;
 		}
 
+		img.second
+		{
+			width: 80px;
+			position: absolute;
+			left: 50%;
+			top: 30px;
+		}
+
+		#left
+		{
+			margin-left: -130px;
+			-webkit-animation: animatieLinks 3s;
+		}
+
+		#center
+		{
+			margin-left: -40px;
+			-webkit-animation: animatieMidden 3s;
+		}
+
+		#right
+		{
+			margin-left: 60px;
+			-webkit-animation: animatieRechts 3s;
+		}
+
 		#man
 		{
 			position: relative;
@@ -20,7 +46,7 @@
 			margin-right: auto;
 			text-align: center;
 			left: 100px;
-			-webkit-animation: animatieMan 1.5s;
+			-webkit-animation: animatieMan 3s;
 		}
 
 		.screen
@@ -45,10 +71,38 @@
 		@-webkit-keyframes animatieMan
 		{
 			0%		{top: 500px;}
-			50%		{top: 20px;}
-			60%		{top: 30px;}
-			80%		{top: -200px;}
+			25%		{top: 20px;}
+			30%		{top: 30px;}
+			45%		{top: 30px;}
+			70%		{top: -200px;}
 			100%	{top: -200px;}
+		}
+
+		@-webkit-keyframes animatieLinks
+		{
+			0%		{top: 500px; opacity: 0;}
+			50%		{top: 500px; opacity: 0;}
+			70%		{top: 20px; opacity: 1;}
+			75%		{top: 40px;}
+			90%		{top: 40px;}
+		}
+
+		@-webkit-keyframes animatieMidden
+		{
+			0%		{top: 500px; opacity: 0;}
+			59%		{top: 500px; opacity: 0;}
+			70%		{top: 20px; opacity: 1;}
+			74%		{top: 40px;}
+			90%		{top: 40px;}
+		}
+
+		@-webkit-keyframes animatieRechts
+		{
+			0%		{top: 500px; opacity: 0;}
+			50%		{top: 500px; opacity: 0;}
+			67%		{top: 20px; opacity: 1;}
+			72%		{top: 40px;}
+			90%		{top: 40px;}
 		}
 
 	</style>
@@ -56,6 +110,10 @@
 	<div class="screen">
 		
 		<img id="man" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/short_beard.png" alt="">
+
+		<img class="second" id="left" src="https://cdn4.iconfinder.com/data/icons/dot/256/cafe_coffee.png" alt="">
+		<img class="second" id="center" src="http://uxrepo.com/static/icon-sets/ionicons/svg/egg.svg" alt="">
+		<img class="second" id="right" src="http://simpleicon.com/wp-content/uploads/beer.png" alt="">
 
 	</div>
 
