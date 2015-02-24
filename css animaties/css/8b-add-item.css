@@ -39,9 +39,9 @@ ul#todo li
     font-weight: bold;
     list-style-type: none;
     overflow: hidden;
-    -webkit-transform: rotateX(90deg);
-    -webkit-transform-origin: top;
-    transition: -webkit-transform 0.5s;
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform-origin: top;
+    transition: all .3s ease-out;
 
     /* this is where the magic happens */
     height: 0;
@@ -52,11 +52,11 @@ ul#todo li
 ul#todo li.appear
 {
     /* this is where the magic happens */
-    height: 1em;
+    height: 15px;
     padding: 0.5em;
     transform: none;
     border: 1px solid white;
-    -webkit-transform: perspective(400px) rotateY(0deg);
+    -webkit-transform: perspective(400px) rotateX(0deg);
 
 }
 
