@@ -25,18 +25,21 @@
 		{
 			margin-left: -130px;
 			-webkit-animation: animatieLinks 3s;
+			-webkit-animation-fill-mode: forwards;
 		}
 
 		#center
 		{
 			margin-left: -40px;
 			-webkit-animation: animatieMidden 3s;
+			-webkit-animation-fill-mode: forwards;
 		}
 
 		#right
 		{
 			margin-left: 60px;
 			-webkit-animation: animatieRechts 3s;
+			-webkit-animation-fill-mode: forwards;
 		}
 
 		#man
@@ -47,6 +50,7 @@
 			text-align: center;
 			left: 100px;
 			-webkit-animation: animatieMan 3s;
+			-webkit-animation-fill-mode: forwards;
 		}
 
 		.screen
@@ -58,6 +62,7 @@
 			margin-right: auto;
 			background-color: #0376D5;
 			-webkit-animation: animatieAchtergrond 3s;
+			-webkit-animation-fill-mode: forwards;
 		}
 
 		@-webkit-keyframes animatieAchtergrond
@@ -83,17 +88,17 @@
 			0%		{top: 500px; opacity: 0;}
 			50%		{top: 500px; opacity: 0;}
 			70%		{top: 20px; opacity: 1;}
-			75%		{top: 40px;}
-			90%		{top: 40px;}
+			79%		{top: 40px;}
+			100%	{top: 40px;}
 		}
 
 		@-webkit-keyframes animatieMidden
 		{
 			0%		{top: 500px; opacity: 0;}
-			59%		{top: 500px; opacity: 0;}
-			70%		{top: 20px; opacity: 1;}
-			74%		{top: 40px;}
-			90%		{top: 40px;}
+			50%		{top: 500px; opacity: 0;}
+			75%		{top: 20px; opacity: 1;}
+			80%		{top: 40px;}
+			100%	{top: 40px;}
 		}
 
 		@-webkit-keyframes animatieRechts
@@ -101,8 +106,8 @@
 			0%		{top: 500px; opacity: 0;}
 			50%		{top: 500px; opacity: 0;}
 			67%		{top: 20px; opacity: 1;}
-			72%		{top: 40px;}
-			90%		{top: 40px;}
+			79%		{top: 40px;}
+			100%	{top: 40px;}
 		}
 
 	</style>
