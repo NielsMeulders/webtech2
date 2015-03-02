@@ -1,20 +1,16 @@
 /* ---------------------------------------- FRAMEWORK ---------------------------------- */
-function WrapperElement(element)
+function WrapperElement(el)
 {
     // a wrapper element allow us to extend html dom functionality
     // without changing the behaviour of built-in elements
 	
     // this contains the actual selection
-    this.element = element;
+    this.element = el;
     
     // this allows us to see if a selection contains one or more elements
-    if(element[0] != undefined)
-    {
-        this.isArray = true;
-    }
-    else
-    {
-        this.isArray = false;
+    //this.isArray = el.length > 1 ? true : false;
+    if (el && el.length) {
+        this.isArray = el.length
     }
 }
 
@@ -65,7 +61,17 @@ WrapperElement.prototype.keyup = function(action){
 
 WrapperElement.prototype.click = function(action)
 {
-	
+	if (this.isArray)
+    {
+        for (var i=0; i<this.el.length; i++)
+        {
+            this.element[i].addEventListener("click",action);
+        }
+    }
+    else
+    {
+        this.element.addEventListener("click",action);
+    }
 }
 
 WrapperElement.prototype.val = function(value)
