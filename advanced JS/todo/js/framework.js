@@ -1,22 +1,40 @@
 /* ---------------------------------------- FRAMEWORK ---------------------------------- */
-function WrapperElement(el)
+var WrapperElement = function(element)
 {
     // a wrapper element allow us to extend html dom functionality
     // without changing the behaviour of built-in elements
 	
     // this contains the actual selection
-    this.element = el;
+    this.element = element;									
     
     // this allows us to see if a selection contains one or more elements
-    //this.isArray = el.length > 1 ? true : false;
-    if (el && el.length) {
-        this.isArray = el.length
+    if(element[0] != undefined)
+    {
+        this.isArray = true;
+    }
+    else
+    {
+        this.isArray = false;
     }
 }
 
 WrapperElement.prototype.toggleClass = function(className)
 {
-    
+	if(this.isArray)
+	{
+															// multiple elements, we'll need to loop
+		for(var i = 0; i<this.element.length; i++)
+		{
+			this.element[i].classList.toggle(className);
+		}
+	}
+	else
+	{
+															// just one element, so we can manipulate it without looping
+
+		this.element.classList.toggle(className);
+	}
+	return this; 			
 }
 
 WrapperElement.prototype.addClass = function(className)
@@ -39,7 +57,7 @@ WrapperElement.prototype.addClass = function(className)
 
 WrapperElement.prototype.prepend = function(item)
 {
-
+	this.element.insertBefore(item, this.element.firstChild);
 }
 
 WrapperElement.prototype.keyup = function(action){
@@ -61,22 +79,30 @@ WrapperElement.prototype.keyup = function(action){
 
 WrapperElement.prototype.click = function(action)
 {
-	if (this.isArray)
-    {
-        for (var i=0; i<this.el.length; i++)
-        {
-            this.element[i].addEventListener("click",action);
-        }
-    }
-    else
-    {
-        this.element.addEventListener("click",action);
-    }
+	if(this.isArray)
+	{
+		// multiple elements, we'll need to loop
+		for(var i = 0; i<this.element.length; i++)
+		{
+			this.element[i].addEventListener('click', action);
+		}
+	}
+	else
+	{
+		// just one element, let's go nuts
+		this.element.addEventListener('click', action);
+	}
+	return this;	
 }
 
 WrapperElement.prototype.val = function(value)
-{
-	
+{ 
+	if(typeof value !== 'undefined') 
+	{
+		this.element.value = value;
+	}
+
+	return this.element.value;
 }
 
 var $ = function(selector)
@@ -99,13 +125,15 @@ var $ = function(selector)
 		break;
 
 		case '.':
-		// complete this section
 		// make sure we can select elements based on a class name
+		var elementid =	selector.substr(1);
+		selectedItems = document.getElementsByClassName(elementid);
 		break;
 		
 		default:
-		// complete this section
 		// make sure we can select elements based on their tag names
+		selectedItems = document.getElementsByTagName(selector);
+		break;
 	}
 
 	var newElement = new WrapperElement(selectedItems);

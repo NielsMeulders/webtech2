@@ -1,6 +1,5 @@
 /* ---------------------------------------------------- APP ---------------------------------- */
 $("li").click(function(){ 								// make sure we can click on an element
-    alert('here');
 	$(this).toggleClass("done"); 						// when we click on any list item, add the class done if it doesn't exist yet on the element or remove it when it exists
 });
 
