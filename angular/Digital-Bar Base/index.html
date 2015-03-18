@@ -16,12 +16,12 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container" ng-app>
             <h1>Digital Bar</h1>
 
             <div class="center">
                 <label for="name">Tell me, what is your name?</label>
-                <input type="text" name="name"/>
+                <input type="text" name="name" ng-model="myName"/>
                 <p ng-if="myName">Hello, order some drinks!</p>
             </div>
 
@@ -61,7 +61,7 @@
         <!-- LOCAL SCRIPT-->
         <script>
             // Insert Angular magic here
-
+            
             // API URL: 'http://imd.district01.be'
             // PRODUCTS: 'http://imd.district01.be/product' (PUT - GET)
             // ORDER: 'http://imd.district01.be/order' (POST)
