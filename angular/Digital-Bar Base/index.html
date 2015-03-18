@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Digital Bar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Load theme styles -->
+        <link rel="stylesheet" href="assets/bower_components/fontawesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="assets/bower_components/normalize.css/normalize.css" />
+
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Digital Bar</h1>
+
+            <div class="center">
+                <label for="name">Tell me, what is your name?</label>
+                <input type="text" name="name"/>
+                <p ng-if="myName">Hello, order some drinks!</p>
+            </div>
+
+            <div ng-if="myName" class="productsContainer">
+
+                <div class="orderAdd">
+                    <input type="text" placeholder="Zoek een product"/>
+
+                    <ul class="productList" >
+                        <li>
+                            <span class="name"></span>
+                            <small class="quantity"></small>
+                        </li>
+                    </ul>
+                    <button class="action">Send your order</button>
+                    <p ng-if="status.orderSent">Your order has been added!</p>
+                </div>
+
+
+                <div class="addProduct">
+                    <label>Nieuw Product</label>
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Productnaam" />
+                    </div>
+                    <button class="action">Add product</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS ///////////////////////////////////////////////////// -->
+
+        <!-- ANGULAR -->
+        <script src="assets/bower_components/jquery/dist/jquery.js"></script>
+        <script src="assets/bower_components/lodash/lodash.js"></script>
+        <script src="assets/bower_components/angular/angular.js"></script>
+
+        <!-- LOCAL SCRIPT-->
+        <script>
+            // Insert Angular magic here
+
+            // API URL: 'http://imd.district01.be'
+            // PRODUCTS: 'http://imd.district01.be/product' (PUT - GET)
+            // ORDER: 'http://imd.district01.be/order' (POST)
+        </script>
+
+    </body>
+
+</html>
