@@ -29,12 +29,14 @@
             <div ng-if="myName" class="productsContainer">
 
                 <div class="orderAdd">
-                    <input type="text" placeholder="Zoek een product"/>
+                    <input type="text" placeholder="Zoek een product" ng-model="productSearch"/>
 
                     <ul class="productList" >
-                        <li ng-repeat="product in products">
+                        <li ng-repeat="product in products | filter:productSearch">
                             <span class="name">{{product.name}}</span>
-                            <small class="quantity">{{product.qty}}</small>
+                            <button ng-click="product.__v = product.__v - 1">-</button>
+                            <small class="quantity">{{product.__v}}</small>
+                            <button ng-click="product.__v = product.__v + 1">+</button>
                         </li>
                     </ul>
                     <button class="action">Send your order</button>
@@ -65,23 +67,19 @@
             
             var app = angular.module('imdApp', []);
             
-            app.controller('myController', function($scope){
+            app.controller('myController', function($scope,$http){
             console.log('hi there!', $scope);
 
-
-              $scope.products = [{
-                name:'Cola',
-                qty: 0
-              },{
-                name:'Fanta',
-                qty: 0
-              },{
-                name:'Jupiler',
-                qty: 0
-              },{
-                name:'Capri-sun',
-                qty: 0
-              }];
+            $http.get('http://imd.district01.be/product').
+          success(function(data, status, headers, config) {
+            $scope.products = data;
+          }).
+          error(function(data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+          });
+                
+              
                 
             });
             // API URL: 'http://imd.district01.be'
