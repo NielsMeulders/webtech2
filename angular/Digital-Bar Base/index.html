@@ -47,9 +47,9 @@
                 <div class="addProduct">
                     <label>Nieuw Product</label>
                     <div class="input-wrapper">
-                        <input type="text" placeholder="Productnaam" />
+                        <input type="text" ng-model="nieuwProduct" placeholder="Productnaam" />
                     </div>
-                    <button class="action">Add product</button>
+                    <button class="action" ng-click="voegToe()">Add product</button>
                 </div>
             </div>
         </div>
@@ -65,19 +65,42 @@
         <script>
             // Insert Angular magic here
             
+            
+            
             var app = angular.module('imdApp', []);
             
             app.controller('myController', function($scope,$http){
             console.log('hi there!', $scope);
+                
+            $scope.data={
+                nieuwProduct:undefined
+            }
 
             $http.get('http://imd.district01.be/product').
-          success(function(data, status, headers, config) {
-            $scope.products = data;
-          }).
-          error(function(data, status, headers, config) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-          });
+            success(function(data, status, headers, config) {
+                $scope.products = data;
+            }).
+            error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+            
+            $scope.voegToe = function(){
+                
+                $http.post('http://imd.district01.be/product',{name: $scope.data.nieuwProduct}).
+                success(function(data, status, headers, config) {
+                    $http.get('http://imd.district01.be/product').
+                    success(function(data, status, headers, config) {
+                    $scope.products = data;
+            })
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+            
+            };
+            
                 
               
                 
