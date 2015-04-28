@@ -22,3 +22,8 @@ Hierbij denken we bijvoorbeeld aan overgangen wanneer de muis over een object ga
 Alle oefeningen zijn tot in de puntjes afgewerkt met soms extra features om een real-life look te geven
 
 [Bekijk hier alle oefeningen](https://github.com/NielsMeulders/webtech2/tree/master/css%20animaties)
+
+## Week 3: Advanced JavaScript
+Buiten HTML en CSS is JavaScript een andere zeer belangrijke programmeertaal binnen de web-wereld. Daarom moeten we ook hier op oefenen. Deze todo-app biedt de mogelijkheid om nieuwe taken toe te voegen. Daarna kunnen we elke taak apart gaan aanduiden als afgewerkt of daarna terug op onafgewerkt zetten.
+
+[Hier vindt u de applicatie](https://github.com/NielsMeulders/webtech2/tree/master/advanced%20JS/todo)
