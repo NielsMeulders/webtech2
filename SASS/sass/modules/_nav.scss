@@ -1,0 +1,15 @@
+.nav
+{
+    width: 100%;
+    background-color: $color1;
+    padding: 1em;
+    
+    &__item
+    {
+        display: block;
+        width: 33%;
+        float: left;
+        padding: 0;
+    }
+    
+}
