@@ -27,3 +27,11 @@ Alle oefeningen zijn tot in de puntjes afgewerkt met soms extra features om een 
 Buiten HTML en CSS is JavaScript een andere zeer belangrijke programmeertaal binnen de web-wereld. Daarom moeten we ook hier op oefenen. Deze todo-app biedt de mogelijkheid om nieuwe taken toe te voegen. Daarna kunnen we elke taak apart gaan aanduiden als afgewerkt of daarna terug op onafgewerkt zetten.
 
 [Hier vindt u de applicatie](https://github.com/NielsMeulders/webtech2/tree/master/advanced%20JS/todo)
+
+## Week 4: App prototypes met APIs
+Dankzij een API kunnen we informatie van andere mensen gebruiken om onze eigen app van data te voorzien. Deze API's kunnen verschillende doeleinden hebben. Bijvoorbeeld: weergegevens, treinuren,... Zelfs de gekste dingen zijn beschikbaar zoals de database van Bol.com. Daarmee kunnen we onze eigen webshop bouwen die de prijzen van Bol rechtstreeks volgt.
+
+Een veelgebruikte API is die van een weerstation. Deze stuurt constant informatie uit waardoor we zelf een app kunnen bouwen met de informatie die wij zelf selecteren aan de hand van de gewenste doelgroep. Mijn applicatie is zo'n weerapp. Dankzij geolocatie wordt de huidige locatie opgevraagd en opgeslagen. Daarmee kunnen we de API raadplegen om het weer op deze locatie te bepalen. Aan de hand van de zon en wolken wordt er steeds een ander symbool weergegeven, samen met de huidige temperatuur.
+
+[Hier vindt u de applicatie](https://github.com/NielsMeulders/weatherapp)
+
