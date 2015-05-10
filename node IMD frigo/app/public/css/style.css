@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 15px Helvetica, Arial;
+}
+ul li {
+	list-style-type: none;
+	clear: both;
+}
+ul li span {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+}
+ul li span.amount {
+	margin-left: 5px;
+}
+#products a.product {
+	margin: 0px 0px 10px 10px;
+	float: right;
+}
+form input[type="text"] {
+	width: 65%;
+}
+form input[type="button"] {
+	width: 30%;
+}

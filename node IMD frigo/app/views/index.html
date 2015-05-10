@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Q&amp;A</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class="text-center">Q&amp;A</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-3 col-xs-offset-0">
+					<ul id="products"></ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<form action="" class="form-inline">
+						<input type="text" id="message" class="form-control">
+						<input type="button" id="btn" value="Send" class="btn btn-default">
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				var socket = io();
+
+				$('#btn').on('click', function() {
+					socket.emit('message', $("#message").val());
+				});
+
+				socket.on('startMessages', function(messages) {
+					$('#products').val();
+					var length = messages.length;
+					for(var i = 0; i < messages.length; i++) {
+						$('#products').append('<li>'+messages[i].message+'</li>');
+					}
+				});
+
+				socket.on('update', function(update) {
+					console.log('update', update);
+					$('#products').append('<li>'+update.message+'</li>');
+				});
+			});
+		</script>
+	</body>
+</html>
