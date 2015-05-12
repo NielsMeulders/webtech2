@@ -35,3 +35,16 @@ Een veelgebruikte API is die van een weerstation. Deze stuurt constant informati
 
 [Hier vindt u de applicatie](https://github.com/NielsMeulders/weatherapp)
 
+## Week 5: Realtime apps met node.js
+Tijdens een gastles van District01 kregen we een opleiding Node. Dit is een platform om gemakkelijk netwerkapplicaties te bouwen. Ik heb deze les spijtig genoeg niet kunnen meevolgen dus ik heb achteraf zelfstudie moeten doen om de opdracht te maken.
+
+Deze app maakt gebruik van MongoDB. Dit is een alternatief van MySQL maar deze is veel beter wanneer de database op grotere schaal moet draaien. Om de server te laten draaien voeren we het volgende commando uit:
+```sh
+$ mongod
+$ mongo
+```
+De volgende stap is om de applicatie zelf te laten runnen. Dit kunnen we doen met onderstaand commando
+```sh
+$ node app.js
+```
+Nu kunnen we op localhost:3003 de app live testen. Alle data (drankjes) die in het veld ingevoerd worden, zal live op het scherm te zien zijn en deze wordt ook opgeslagen in de databank. Om de inhoud van de databank te bekijken, gebruik ik robomongo. Als we hierbij verbinding maken met de juiste database, krijgen we alle inhoud hiervan te zien.
