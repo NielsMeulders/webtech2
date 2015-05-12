@@ -48,3 +48,18 @@ De volgende stap is om de applicatie zelf te laten runnen. Dit kunnen we doen me
 $ node app.js
 ```
 Nu kunnen we op localhost:3003 de app live testen. Alle data (drankjes) die in het veld ingevoerd worden, zal live op het scherm te zien zijn en deze wordt ook opgeslagen in de databank. Om de inhoud van de databank te bekijken, gebruik ik robomongo. Als we hierbij verbinding maken met de juiste database, krijgen we alle inhoud hiervan te zien.
+
+[Hier vindt u de applicatie](https://github.com/NielsMeulders/webtech2/tree/master/node%20IMD%20frigo)
+
+## Week 6: AngularJS
+Angular is een framework om apps te bouwen. Dankzij dit framework kunnen we de 'woordenschat' van HTML uitbreiden om zo snel en eenvoudig webapplicaties te bouwen.
+
+[Hier vindt u de applicatie](https://github.com/NielsMeulders/webtech2/tree/master/angular/Digital-Bar%20Base)
+
+## Week 7: SASS
+SASS is een CSS preprocessor waardoor we minder code moeten schrijven, variabelen kunnen gebruiken en CSS-code kunnen groeperen.
+De overgang van gewone CSS naar SASS is voor mij eerder moeilijk omdat hiervoor de commandline nodig is. De code die in een SASS-bestand staat moet 'geconverteerd' worden naar standaard CSS. Daarom vind ik het nog steeds makkelijker en sneller om gewone css te schrijven en zo steeds te bekijken wat er verandert.
+
+Hiervoor zijn echter wel hulpmiddelen die bij elke verandering die ze detecteren, de bestanden omzetten waardoor je ook soepel kan developen. Ik heb er persoonlijk nog niet zo veel ervaring mee dus voorlopig is het niet mijn favoriet.
+
+[Hier vindt u de oefening](https://github.com/NielsMeulders/webtech2/tree/master/SASS/sass)
